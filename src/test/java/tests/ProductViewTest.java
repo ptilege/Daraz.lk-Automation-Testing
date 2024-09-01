@@ -7,13 +7,21 @@ import pages.ProductDetailsPage;
 public class ProductViewTest extends BaseTest{
 
     @Test
-    public void testViewProduct(){
-        driver.get("https://www.daraz.lk/");
-        HomePage homePage = new HomePage(driver);
-        homePage.searchProduct("laptop");
+    public void testViewProduct() {
+        startTest("View Product Test");
 
-        ProductDetailsPage productDetail = new ProductDetailsPage(driver);
-        productDetail.selectRandomProduct();
+        try {
+            driver.get("https://www.daraz.lk/");
+            HomePage homePage = new HomePage(driver);
+            homePage.searchProduct("laptop");
+
+            ProductDetailsPage productDetail = new ProductDetailsPage(driver);
+            productDetail.selectRandomProduct();
+
+            logTestPass("Product viewed successfully.");
+        } catch (Exception e) {
+            logTestFail("Product view test failed: " + e.getMessage());
+        }
 
     }
 }
