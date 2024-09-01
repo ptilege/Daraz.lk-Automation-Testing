@@ -17,8 +17,8 @@ public class LoginTest extends BaseTest{
 
         driver.get("https://member.daraz.lk/user/login");
         LoginPage loginPage = new LoginPage(driver);
-        loginPage.enterUserName("tharakapasindu13@gmail.com");
-        loginPage.enterPassword("Pti5446@#");
+        loginPage.enterUserName("abc.com");
+        loginPage.enterPassword("abc44@#");
         loginPage.clickLogin();
 
 
